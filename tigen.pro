@@ -12,20 +12,23 @@ SOURCES += \
     dlg_login.cpp \
     main.cpp \
     wid_classic.cpp \
+    wid_main.cpp \
     wid_qrcode.cpp \
-    widget.cpp
+    wid_rux.cpp
 
 HEADERS += \
     dlg_login.h \
     wid_classic.h \
+    wid_main.h \
     wid_qrcode.h \
-    widget.h
+    wid_rux.h
 
 FORMS += \
     dlg_login.ui \
     wid_classic.ui \
+    wid_main.ui \
     wid_qrcode.ui \
-    widget.ui
+    wid_rux.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

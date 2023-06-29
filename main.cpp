@@ -1,5 +1,5 @@
 #include "dlg_login.h"
-#include "widget.h"
+#include "wid_main.h"
 #include "xq/net/net.in.h"
 #include <QApplication>
 
@@ -17,7 +17,7 @@ main(int argc, char *argv[]) {
             break;
         }
 
-        Widget w;
+        wid_main w;
         w.show();
         n = a.exec();
     } while(0);
