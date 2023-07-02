@@ -1,6 +1,5 @@
 import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Shapes 1.15
+import Qt.labs.platform 1.1
 import "components"
 
 
@@ -17,6 +16,41 @@ Window {
     minimumWidth: 640
     minimumHeight: 480
 
+    SystemTrayIcon {
+        visible: true
+        icon.source: 'qrc:/img/resources/Fire.png'
+
+        property bool menuClicked: false
+
+        menu: Menu {
+            MenuItem {
+                text: "Setting"
+                onTriggered: {
+
+                }
+            }
+
+            MenuItem {
+                text: "About"
+                onTriggered: {
+
+                }
+            }
+
+            MenuItem {
+                text: "Quit"
+                onTriggered: {
+                    Qt.quit()
+                }
+            }
+        }
+
+        onActivated: {
+            vMain.show()
+            vMain.raise()
+            vMain.requestActivate()
+        }
+    }
 
     MouseArea {
         property int resizeEdge: 0
@@ -120,7 +154,7 @@ Window {
             }
 
             onClicked: {
-                Qt.quit()
+                vMain.hide()
             }
 
             onExited: {

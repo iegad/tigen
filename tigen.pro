@@ -1,4 +1,4 @@
-QT += quick
+QT += quick core
 
 SOURCES += \
     vMain.cpp
@@ -25,3 +25,5 @@ DISTFILES += \
     components/XButton.qml \
     components/XRectangle.qml \
     vMain.qml
+
+HEADERS +=

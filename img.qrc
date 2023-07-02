@@ -2,5 +2,7 @@
     <qresource prefix="/img">
         <file>resources/Close.png</file>
         <file>resources/icon-kfckfc.png</file>
+        <file>resources/Fire.png</file>
+        <file>resources/shutdown.png</file>
     </qresource>
 </RCC>
