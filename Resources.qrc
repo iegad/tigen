@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>resources/qrcode.png</file>
-    </qresource>
-</RCC>

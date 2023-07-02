@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>resources/Close.png</file>
+        <file>resources/icon-kfckfc.png</file>
+    </qresource>
+</RCC>
