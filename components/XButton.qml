@@ -14,7 +14,6 @@ XRectangle {
         id: img
         source: parent.source
         anchors.centerIn: parent
-//        fillMode: Image.PreserveAspectFit
     }
 
     MouseArea {

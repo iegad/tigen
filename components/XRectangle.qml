@@ -5,7 +5,7 @@ import QtQuick.Shapes 1.15
 Shape {
     id: shape
 
-    property var cornersRadius
+    property var cornersRadius: [0, 0, 0, 0]
     property color color
     property color borderColor: 'transparent'
     property int borderWidth: 1

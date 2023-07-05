@@ -3,6 +3,13 @@
         <file>resources/Close.png</file>
         <file>resources/icon-kfckfc.png</file>
         <file>resources/Fire.png</file>
-        <file>resources/shutdown.png</file>
+        <file>resources/avatar.jpg</file>
+        <file>resources/addrbook.png</file>
+        <file>resources/addrbooka.png</file>
+        <file>resources/group.png</file>
+        <file>resources/groupa.png</file>
+        <file>resources/msg.png</file>
+        <file>resources/msga.png</file>
+        <file>resources/Search.png</file>
     </qresource>
 </RCC>
