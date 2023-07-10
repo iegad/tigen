@@ -4,7 +4,7 @@ import "../components"
 
 
 XBlock {
-    property int offset: 32
+    property int topHeight: 32
 
 
     id: vHome
@@ -21,7 +21,7 @@ XBlock {
 
         drag.target: vHome
         drag.onActiveChanged: {
-            if (active && mouseY <= vHome.offset && mouseY >= 0 && win.visibility !== Window.Maximized) {
+            if (active && mouseY <= vHome.topHeight && mouseY >= 0 && win.visibility !== Window.Maximized) {
                 win.startSystemMove()
             }
         }
@@ -36,7 +36,7 @@ XBlock {
         }
 
         onDoubleClicked: {
-            if (mouseY <= vHome.offset && mouseY >= 0) {
+            if (mouseY <= vHome.topHeight && mouseY >= 0) {
                 if (win.visibility == Window.Maximized) {
                     win.visibility = Window.Windowed
                 } else {
@@ -106,16 +106,21 @@ XBlock {
             height: 39
             color: parent.color
             imageSource: 'qrc:/img/resources/msg.png'
+            tips: qsTr('消息')
 
             onClicked: {
-                imageSource = 'qrc:/img/resources/msga.png'
-                btnContract.imageSource = 'qrc:/img/resources/group.png'
+                btnMsg.imageSource = 'qrc:/img/resources/msga.png'
+                btnGroup.imageSource = 'qrc:/img/resources/group.png'
+                btnContract.imageSource = 'qrc:/img/resources/contract.png'
+                btnOrg.imageSource = 'qrc:/img/resources/org.png'
+                btnMission.imageSource = 'qrc:/img/resources/mission.png'
+                btnSetting.imageSource = 'qrc:/img/resources/setting.png'
             }
         }
 
-        // 联系人
+        // 群组
         XButton {
-            id: btnContract
+            id: btnGroup
             anchors.top: btnMsg.bottom
             anchors.topMargin: 5
             anchors.left: parent.left
@@ -124,14 +129,123 @@ XBlock {
             height: 39
             color: parent.color
             imageSource: 'qrc:/img/resources/group.png'
+            tips: qsTr('群组')
 
             onClicked: {
-                imageSource = 'qrc:/img/resources/groupa.png'
                 btnMsg.imageSource = 'qrc:/img/resources/msg.png'
+                btnGroup.imageSource = 'qrc:/img/resources/groupa.png'
+                btnContract.imageSource = 'qrc:/img/resources/contract.png'
+                btnOrg.imageSource = 'qrc:/img/resources/org.png'
+                btnMission.imageSource = 'qrc:/img/resources/mission.png'
+                btnSetting.imageSource = 'qrc:/img/resources/setting.png'
+            }
+        }
+
+        // 联系人
+        XButton {
+            id: btnContract
+            anchors.top: btnGroup.bottom
+            anchors.topMargin: 5
+            anchors.left: parent.left
+            anchors.leftMargin: 7
+            width: 39
+            height: 39
+            color: parent.color
+            imageSource: 'qrc:/img/resources/contract.png'
+            tips: qsTr('联系人')
+
+            onClicked: {
+                btnMsg.imageSource = 'qrc:/img/resources/msg.png'
+                btnGroup.imageSource = 'qrc:/img/resources/group.png'
+                btnContract.imageSource = 'qrc:/img/resources/contracta.png'
+                btnOrg.imageSource = 'qrc:/img/resources/org.png'
+                btnMission.imageSource = 'qrc:/img/resources/mission.png'
+                btnSetting.imageSource = 'qrc:/img/resources/setting.png'
+            }
+        }
+
+        // 组织架构
+        XButton {
+            id: btnOrg
+            anchors.top: btnContract.bottom
+            anchors.topMargin: 5
+            anchors.left: parent.left
+            anchors.leftMargin: 7
+            width: 39
+            height: 39
+            color: parent.color
+            imageSource: 'qrc:/img/resources/org.png'
+            tips: qsTr('组织')
+
+            onClicked: {
+                btnMsg.imageSource = 'qrc:/img/resources/msg.png'
+                btnGroup.imageSource = 'qrc:/img/resources/group.png'
+                btnContract.imageSource = 'qrc:/img/resources/contract.png'
+                btnOrg.imageSource = 'qrc:/img/resources/orga.png'
+                btnMission.imageSource = 'qrc:/img/resources/mission.png'
+                btnSetting.imageSource = 'qrc:/img/resources/setting.png'
+            }
+        }
+
+        // 任务
+        XButton {
+            id: btnMission
+            anchors.top: btnOrg.bottom
+            anchors.topMargin: 5
+            anchors.left: parent.left
+            anchors.leftMargin: 7
+            width: 39
+            height: 39
+            color: parent.color
+            imageSource: 'qrc:/img/resources/mission.png'
+            tips: qsTr('任务')
+
+            onClicked: {
+                btnMsg.imageSource = 'qrc:/img/resources/msg.png'
+                btnGroup.imageSource = 'qrc:/img/resources/group.png'
+                btnContract.imageSource = 'qrc:/img/resources/contract.png'
+                btnOrg.imageSource = 'qrc:/img/resources/org.png'
+                btnMission.imageSource = 'qrc:/img/resources/missiona.png'
+                btnSetting.imageSource = 'qrc:/img/resources/setting.png'
+            }
+        }
+
+        // 设置
+        XButton {
+            id: btnSetting
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 10
+            anchors.left: parent.left
+            anchors.leftMargin: 7
+            width: 39
+            height: 39
+            color: parent.color
+            imageSource: 'qrc:/img/resources/setting.png'
+            tips: qsTr('设置')
+
+            onClicked: {
+                btnMsg.imageSource = 'qrc:/img/resources/msg.png'
+                btnGroup.imageSource = 'qrc:/img/resources/group.png'
+                btnContract.imageSource = 'qrc:/img/resources/contract.png'
+                btnOrg.imageSource = 'qrc:/img/resources/org.png'
+                btnMission.imageSource = 'qrc:/img/resources/mission.png'
+                btnSetting.imageSource = 'qrc:/img/resources/settinga.png'
             }
         }
     }
 
+    // 中间列表
+    XBlock {
+        id: bCardList
+        width: 240
+        height: parent.height - vHome.topHeight - 10
+        anchors.top: parent.top
+        anchors.topMargin: vHome.topHeight
+        anchors.left: bLeftBar.right
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 10
+        color: 'green'
+    }
 
     // 最小化托盘按钮
     XButton {

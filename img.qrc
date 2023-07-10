@@ -4,13 +4,21 @@
         <file>resources/icon-kfckfc.png</file>
         <file>resources/Fire.png</file>
         <file>resources/avatar.jpg</file>
-        <file>resources/addrbook.png</file>
-        <file>resources/addrbooka.png</file>
         <file>resources/group.png</file>
         <file>resources/groupa.png</file>
         <file>resources/msg.png</file>
         <file>resources/msga.png</file>
         <file>resources/Search.png</file>
+        <file>resources/comp.png</file>
+        <file>resources/compa.png</file>
+        <file>resources/contract.png</file>
+        <file>resources/contracta.png</file>
+        <file>resources/mission.png</file>
+        <file>resources/missiona.png</file>
+        <file>resources/org.png</file>
+        <file>resources/orga.png</file>
+        <file>resources/setting.png</file>
+        <file>resources/settinga.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

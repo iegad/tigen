@@ -7,6 +7,7 @@ XRectangle {
     property string imageSource: ''
     property int imageHeight: xButton.height / 2
     property int imageWidth: xButton.width / 2
+    property string tips: ''
 
 
     signal clicked()
@@ -22,6 +23,14 @@ XRectangle {
         height: xButton.imageHeight
         source: xButton.imageSource
         anchors.centerIn: parent
+    }
+
+    ToolTip {
+        id: tip
+        text: xButton.tips
+        timeout: 2000
+        delay: 1000
+        visible: xButton.tips ? mouseArea.containsMouse : false
     }
 
 
