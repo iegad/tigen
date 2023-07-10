@@ -1,14 +1,16 @@
 QT += quick core
 
 SOURCES += \
-    vMain.cpp
+    main.cpp \
+    src/AppOptions.cpp
 
-resources.files += vMain.qml
+resources.files += main.qml
+resources.files += views/VMain.qml
+resources.files += blocks/BHomeLeft.qml
+resources.files += blocks/BHomeMid.qml
 resources.files += components/XRectangle.qml
+resources.files += components/XBlock.qml
 resources.files += components/XButton.qml
-resources.files += components/XImgButton.qml
-resources.files += components/XLeftBar.qml
-resources.files += components/XWindow.qml
 resources.prefix = /$${TARGET}
 RESOURCES += resources \
     img.qrc
@@ -25,12 +27,16 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    blocks/BHomeLeft.qml \
+    blocks/BHomeMid.qml \
+    components/XBlock.qml \
     components/XButton.qml \
-    components/XImgButton.qml \
-    components/XLeftBar.qml \
     components/XRectangle.qml \
     components/XSearch.qml \
-    components/XWindow.qml \
-    vMain.qml
+    views/VMain.qml \
+    wMain.qml
 
-HEADERS +=
+HEADERS += \
+    include/AppOptions.h
+
+INCLUDEPATH += ./include

@@ -12,4 +12,5 @@
         <file>resources/msga.png</file>
         <file>resources/Search.png</file>
     </qresource>
+    <qresource prefix="/"/>
 </RCC>

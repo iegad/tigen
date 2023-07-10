@@ -1,4 +1,6 @@
 import QtQuick 2.15
+import "../components"
+
 
 // 左侧菜单
 XRectangle {

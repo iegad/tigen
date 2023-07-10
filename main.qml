@@ -1,10 +1,10 @@
 import QtQuick 2.15
 import Qt.labs.platform 1.1
-import "components"
+import "views"
 
 
 Window {
-    id: vMain
+    id: wMain
     width: 640
     height: 480
     visible: true
@@ -45,15 +45,17 @@ Window {
         }
 
         onActivated: {
-            vMain.show()
-            vMain.raise()
-            vMain.requestActivate()
+            wMain.show()
+            wMain.raise()
+            wMain.requestActivate()
         }
     }
 
     // 主窗体
-    XWindow {
-        win: vMain
+    VMain {
+        id: vMain
+        win: wMain
         anchors.fill: parent
+        color: $appOptions.mainColor
     }
 }
