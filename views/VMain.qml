@@ -236,7 +236,7 @@ XBlock {
     // 中间列表
     XBlock {
         id: bCardList
-        width: 240
+        width: 256
         height: parent.height - vHome.topHeight + 10
         anchors.top: parent.top
         anchors.topMargin: vHome.topHeight - 10
@@ -273,14 +273,16 @@ XBlock {
             anchors.leftMargin: 5
             anchors.right: parent.right
             anchors.rightMargin: 5
-            color: 'green'
+            color: parent.color
 
             Component {
                 id: blockDelegate
-                Rectangle {
+                XPlant {
+                    imageSource: 'qrc:/img/resources/avatar.jpg'
                     width: lvPlant.width
                     height: 65
-                    border.color: 'red'
+                    title: 'aaaa'
+                    backgorundColor: '#636363'
                 }
             }
 
@@ -295,13 +297,14 @@ XBlock {
 
                 ScrollBar.vertical: ScrollBar {
                     id: scrollBar
-                    width: 8
+                    width: 6
                     z: 10
-                    opacity: 0.5
+                    opacity: 1
                     policy: ScrollBar.AsNeeded
 
                     background: Rectangle {
-                        color: '#eeeeee'
+                        id: bg
+                        color: '#636363'
                     }
                 }
             }
