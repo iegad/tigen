@@ -29,6 +29,5 @@ Shape {
         PathLine { x: cornersRadius[3]; y: shape.height }
         PathQuad { x: 0; y: shape.height - cornersRadius[3]; controlX: 0; controlY: shape.height }
         PathLine { x: 0; y: cornersRadius[0] }
-
     }
 }

@@ -6,11 +6,11 @@ SOURCES += \
 
 resources.files += main.qml
 resources.files += views/VMain.qml
-resources.files += blocks/BHomeLeft.qml
-resources.files += blocks/BHomeMid.qml
 resources.files += components/XRectangle.qml
 resources.files += components/XBlock.qml
 resources.files += components/XButton.qml
+resources.files += components/XSearch.qml
+resources.files += components/XScrollbar.qml
 resources.prefix = /$${TARGET}
 RESOURCES += resources \
     img.qrc
@@ -27,11 +27,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    blocks/BHomeLeft.qml \
-    blocks/BHomeMid.qml \
     components/XBlock.qml \
     components/XButton.qml \
     components/XRectangle.qml \
+    components/XScrollbar.qml \
     components/XSearch.qml \
     views/VMain.qml \
     wMain.qml

@@ -4,15 +4,14 @@ import "../components"
 
 
 XBlock {
+    id: vHome
+
     property int topHeight: 32
 
-
-    id: vHome
-    opacity: 1
     cornersRadius: [5, 5, 5, 5]
     anchors.fill: parent
 
-
+    // 窗体控制
     MouseArea {
         property int edges: 0
 
@@ -238,13 +237,75 @@ XBlock {
     XBlock {
         id: bCardList
         width: 240
-        height: parent.height - vHome.topHeight - 10
+        height: parent.height - vHome.topHeight + 10
         anchors.top: parent.top
-        anchors.topMargin: vHome.topHeight
+        anchors.topMargin: vHome.topHeight - 10
         anchors.left: bLeftBar.right
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 10
-        color: 'green'
+        color: 'transparent'
+
+        // 多功能搜索栏
+        XSearch {
+            id: txtSearch
+            width: parent.width - 20
+            height: 30
+            anchors.top: parent.top
+            anchors.topMargin: 5
+            anchors.left: parent.left
+            anchors.leftMargin: 10
+            color: '#E3E3E3'
+
+            model: ListModel {
+                id: listModel
+            }
+
+            onClick: console.log(txtSearch.text)
+        }
+
+        // Plant列表
+        Rectangle {
+            id: rcPlant
+            height: bCardList.height - txtSearch.height - 20
+            anchors.top: txtSearch.bottom
+            anchors.topMargin: 10
+            anchors.left: parent.left
+            anchors.leftMargin: 5
+            anchors.right: parent.right
+            anchors.rightMargin: 5
+            color: 'green'
+
+            Component {
+                id: blockDelegate
+                Rectangle {
+                    width: lvPlant.width
+                    height: 65
+                    border.color: 'red'
+                }
+            }
+
+            ListView {
+                id: lvPlant
+                anchors.fill: parent
+                model: 50
+                snapMode: ListView.NoSnap
+                delegate: blockDelegate
+                clip: true
+                boundsBehavior: Flickable.StopAtBounds
+
+                ScrollBar.vertical: ScrollBar {
+                    id: scrollBar
+                    width: 8
+                    z: 10
+                    opacity: 0.5
+                    policy: ScrollBar.AsNeeded
+
+                    background: Rectangle {
+                        color: '#eeeeee'
+                    }
+                }
+            }
+        }
     }
 
     // 最小化托盘按钮
