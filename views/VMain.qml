@@ -281,8 +281,10 @@ XBlock {
                     imageSource: 'qrc:/img/resources/avatar.jpg'
                     width: lvPlant.width
                     height: 65
-                    title: 'aaaa'
+                    title: '地地地地地地地地'
                     backgorundColor: '#636363'
+                    lastTime: '2023-01-01 12:23:55'
+                    lastMsg: '12345678901234567890123456789012345678901234567890'
                 }
             }
 

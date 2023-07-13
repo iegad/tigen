@@ -11,6 +11,8 @@ Rectangle {
     property string imageSource: ''
     property color imageBorderColor: '#E3E3E3'
     property color hoveredColor: '#BCBCBC'
+    property string lastTime: ''
+    property string lastMsg: ''
 
     color: backgorundColor
 
@@ -44,12 +46,33 @@ Rectangle {
 
     Text {
         id: title
-        text: "Title"
-        font.pixelSize: 16
+        text: plant.title
+        font.pixelSize: 14
         color: plant.titleColor
-        height: parent.width * 0.7
         anchors.top: parent.top
         anchors.topMargin: 8
+        anchors.left: imgBorder.right
+        anchors.leftMargin: 5
+
+        Component.onCompleted: console.log(title.height)
+    }
+
+    Text {
+        id: lastTime
+        text: plant.lastTime
+        font.pixelSize: title.font.pixelSize - 4
+        color: plant.titleColor
+        anchors.top: title.bottom
+        anchors.left: imgBorder.right
+        anchors.leftMargin: 5
+    }
+
+    Text {
+        id: lastMsg
+        text: plant.lastMsg
+        font.pixelSize: lastTime.font.pixelSize
+        color: '#CCCCCC'
+        anchors.top: lastTime.bottom
         anchors.left: imgBorder.right
         anchors.leftMargin: 5
     }
