@@ -6,11 +6,13 @@ SOURCES += \
 
 resources.files += main.qml
 resources.files += views/VMain.qml
+resources.files += views/VMsg.qml
 resources.files += components/XRectangle.qml
 resources.files += components/XBlock.qml
 resources.files += components/XButton.qml
 resources.files += components/XSearch.qml
 resources.files += components/XPlant.qml
+resources.files += components/XMsgPlant.qml
 resources.prefix = /$${TARGET}
 RESOURCES += resources \
     img.qrc
@@ -29,10 +31,12 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES += \
     components/XBlock.qml \
     components/XButton.qml \
+    components/XMsgPlant.qml \
     components/XPlant \
     components/XRectangle.qml \
     components/XPlant.qml \
     views/VMain.qml \
+    views/VMsg.qml \
     wMain.qml
 
 HEADERS += \

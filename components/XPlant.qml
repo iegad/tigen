@@ -53,8 +53,6 @@ Rectangle {
         anchors.topMargin: 8
         anchors.left: imgBorder.right
         anchors.leftMargin: 5
-
-        Component.onCompleted: console.log(title.height)
     }
 
     Text {

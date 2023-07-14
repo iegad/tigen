@@ -235,7 +235,7 @@ XBlock {
 
     // 中间列表
     XBlock {
-        id: bCardList
+        id: bMidPlant
         width: 256
         height: parent.height - vHome.topHeight + 10
         anchors.top: parent.top
@@ -256,17 +256,13 @@ XBlock {
             anchors.leftMargin: 10
             color: '#E3E3E3'
 
-            model: ListModel {
-                id: listModel
-            }
-
-            onClick: console.log(txtSearch.text)
+            onClick: {}
         }
 
         // Plant列表
         Rectangle {
             id: rcPlant
-            height: bCardList.height - txtSearch.height - 20
+            height: bMidPlant.height - txtSearch.height - 20
             anchors.top: txtSearch.bottom
             anchors.topMargin: 10
             anchors.left: parent.left
@@ -276,7 +272,7 @@ XBlock {
             color: parent.color
 
             Component {
-                id: blockDelegate
+                id: plantDelegate
                 XPlant {
                     imageSource: 'qrc:/img/resources/avatar.jpg'
                     width: lvPlant.width
@@ -292,8 +288,7 @@ XBlock {
                 id: lvPlant
                 anchors.fill: parent
                 model: 50
-                snapMode: ListView.NoSnap
-                delegate: blockDelegate
+                delegate: plantDelegate
                 clip: true
                 boundsBehavior: Flickable.StopAtBounds
 
@@ -310,6 +305,30 @@ XBlock {
                     }
                 }
             }
+        }
+    }
+
+    // 右侧视图
+    XBlock {
+        id: bRightView
+
+        anchors.top: parent.top
+        anchors.topMargin: 32
+        anchors.left: bMidPlant.right
+        anchors.leftMargin: 0
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 10
+        anchors.right: parent.right
+        anchors.rightMargin: 5
+        width: parent.width - bMidPlant.width - bLeftBar.width - 5
+        height: parent.height
+
+        VMsg {
+            width: parent.width
+            height: parent.height
+            anchors.fill: parent
+            dlgTitle: 'Aizen'
+            color: vHome.color
         }
     }
 

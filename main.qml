@@ -5,14 +5,14 @@ import "views"
 
 Window {
     id: wMain
-    width: 640
-    height: 480
+    width: 800
+    height: 600
     visible: true
     flags: Qt.Window | Qt.FramelessWindowHint
     color: 'transparent'
 
-    minimumWidth: 640
-    minimumHeight: 480
+    minimumWidth: 800
+    minimumHeight: 600
 
     // 托盘
     SystemTrayIcon {

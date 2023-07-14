@@ -5,7 +5,6 @@ XRectangle {
     id: txtSch
 
     property string text: ''
-    property ListModel model
 
     signal click()
 
@@ -49,22 +48,4 @@ XRectangle {
             }
         }
     }
-
-//    Menu {
-//        id: menu
-//        width: txtSch.width
-
-
-//        Instantiator {
-//            id: menuInstaniator
-//            model: txtSch.model
-
-//            delegate: MenuItem {
-//                text: model.key
-//            }
-
-//            onObjectAdded: menu.insertItem(index, object)
-//            onObjectRemoved: menu.removeItem(object)
-//        }
-//    }
 }
