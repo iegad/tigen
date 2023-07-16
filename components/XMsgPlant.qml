@@ -13,6 +13,7 @@ Rectangle {
 
     XRectangle {
         id: bAvatar
+        visible: !isSelf
         color: '#E3E3E3'
         cornersRadius: [5, 5, 5, 5]
         width: 40
@@ -37,16 +38,26 @@ Rectangle {
         }
     }
 
+    // r 24
+    // l 17
+    // 5
     XRectangle {
         id: bgTxtContent
-        cornersRadius: [0, 10, 10, 10]
-        color: '#95EC69'
+        cornersRadius: [isSelf ? 15 : 0, isSelf ? 0 : 15, 15, 15]
+        color: isSelf ? '#EEEEEE' : '#95EC69'
         width: Math.min(txtContent.implicitWidth + 20, xMsgPlant.width)
         height: txtContent.implicitHeight + 20
-        anchors.left: bAvatar.right
         anchors.leftMargin: 3
         anchors.top: xMsgPlant.top
         anchors.topMargin: 20
+
+        Component.onCompleted: {
+            if (isSelf) {
+                anchors.right = parent.right
+            } else {
+                anchors.left = bAvatar.right
+            }
+        }
     }
 
 
