@@ -38,9 +38,6 @@ Rectangle {
         }
     }
 
-    // r 24
-    // l 17
-    // 5
     XRectangle {
         id: bgTxtContent
         cornersRadius: [isSelf ? 15 : 0, isSelf ? 0 : 15, 15, 15]
@@ -53,21 +50,21 @@ Rectangle {
 
         Component.onCompleted: {
             if (isSelf) {
-                anchors.right = parent.right
+                bgTxtContent.anchors.right = parent.right
             } else {
-                anchors.left = bAvatar.right
+                bgTxtContent.anchors.left = bAvatar.right
             }
         }
     }
-
 
     TextEdit {
         id: txtContent
         text: xMsgPlant.msgContent
         readOnly: true
         anchors.fill: bgTxtContent
-        anchors.topMargin: 5
-        anchors.leftMargin: 5
+        anchors.topMargin: 10
+        anchors.leftMargin: 10
+        anchors.rightMargin: 10
         selectByMouse: true
         wrapMode: TextEdit.WordWrap
     }
