@@ -327,7 +327,7 @@ XBlock {
             width: parent.width
             height: parent.height
             anchors.fill: parent
-            dlgTitle: 'Aizen'
+            dlgID: 'Aizen'
             color: vHome.color
         }
     }
