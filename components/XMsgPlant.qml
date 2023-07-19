@@ -66,6 +66,6 @@ Rectangle {
         anchors.leftMargin: 10
         anchors.rightMargin: 10
         selectByMouse: true
-        wrapMode: TextEdit.WordWrap
+        wrapMode: TextEdit.Wrap
     }
 }
